@@ -20,6 +20,8 @@ function setup() {
   leftBase = new Base(80,400,150,100)
   rightBase = new Base(1270,400,150,100)
   jointPoint = new Base(1270,400,150,100)
+  Matter.Composite.add(flyover.body,jointPoint)
+  fly_con = new Link(flyover,jointPoint)
   for(var i=0;i<=8;i++)
   {
     var x = random(width/2-200,width/2+300)
