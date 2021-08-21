@@ -3,8 +3,8 @@ class Stone
     constructor(x,y,radius)
     {
         var options={
-            restitution:1,
-            friction:1,
+            restitution:0.8,
+            friction:0.8,
         }
         this.x=x;
         this.y=y;
@@ -17,9 +17,11 @@ class Stone
         var pos = this.body.position;
         var angle = this.body.angle;
         push();
+        fill(255,255,255)
         translate(pos.x,pos.y)
         rotate(angle)
         rectMode(CENTER)
-        ellipse(0,0,radius,options)
+        ellipse(0,0,this.radius)
+        pop();
     }
 }

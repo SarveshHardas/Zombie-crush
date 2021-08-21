@@ -9,25 +9,34 @@ const Composite = Matter.Composite;
 
 var stones=[];
 
+function preload()
+{
+  axeImg = loadImage("assets/axe.png");
+  bgImg = loadImage("assets/background.png");
+  stoneImg = loadImage("assets/stone.png");
+  woodImg = loadImage("assets/wood.png");
+}
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   engine = Engine.create();
   world = engine.world;
   frameRate(80);
 
-
-  flyover = new Bridge(20,{x:120,y:400})
-  leftBase = new Base(80,400,150,100)
-  rightBase = new Base(1270,400,150,100)
-  jointPoint = new Base(1270,400,150,100)
+  
+  flyover = new Bridge(20,{x:0,y:300});
+  leftBase = new Base(80,300,150,100);
+  rightBase = new Base(1270,300,150,100);
+  jointPoint = new Base(1270,300,150,100);
   Matter.Composite.add(flyover.body,jointPoint)
   fly_con = new Link(flyover,jointPoint)
   
-
 }
 
-function draw() {
+function draw() 
+{
   background(51);
+
   Engine.update(engine);
   flyover.show();
   leftBase.display();

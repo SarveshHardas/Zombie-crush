@@ -18,6 +18,7 @@ class Base
         translate(pos.x,pos.y)
         rotate(angle)
         rectMode(CENTER)
+        fill("#B25671")
         rect(0,0,this.width,this.height)
         pop()
     }
