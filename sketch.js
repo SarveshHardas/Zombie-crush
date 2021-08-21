@@ -22,13 +22,7 @@ function setup() {
   jointPoint = new Base(1270,400,150,100)
   Matter.Composite.add(flyover.body,jointPoint)
   fly_con = new Link(flyover,jointPoint)
-  for(var i=0;i<=8;i++)
-  {
-    var x = random(width/2-200,width/2+300)
-    var y = random(-10,140)
-    var stone = new Stone(x,y,80,80)
-    stones.push(stone)
-  }
+  
 
 }
 
@@ -38,4 +32,12 @@ function draw() {
   flyover.show();
   leftBase.display();
   rightBase.display();
+  for(var i=0;i<=8;i++)
+  {
+    var x = random(width/2-200,width/2+300)
+    var y = random(-10,140)
+    var stone = new Stone(x,y,80,80)
+    stones.push(stone)
+    stones[i].display();
+  }
 }
